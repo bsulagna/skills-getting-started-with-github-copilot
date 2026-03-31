@@ -38,6 +38,42 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "Basketball Team": {
+        "description": "Competitive basketball league and training",
+        "schedule": "Tuesdays and Thursdays, 4:30 PM - 6:00 PM",
+        "max_participants": 15,
+        "participants": ["alex@mergington.edu"]
+    },
+    "Tennis Club": {
+        "description": "Tennis lessons and tournament competitions",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 10,
+        "participants": ["jessica@mergington.edu"]
+    },
+    "Art Studio": {
+        "description": "Learn painting, drawing, and sculpture techniques",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": ["maya@mergington.edu", "lucas@mergington.edu"]
+    },
+    "Drama Club": {
+        "description": "Acting, theater production, and performance",
+        "schedule": "Fridays, 4:00 PM - 5:30 PM",
+        "max_participants": 25,
+        "participants": ["sarah@mergington.edu"]
+    },
+    "Debate Team": {
+        "description": "Competitive debate and public speaking skills",
+        "schedule": "Mondays and Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 16,
+        "participants": ["david@mergington.edu", "grace@mergington.edu"]
+    },
+    "Science Club": {
+        "description": "Hands-on science experiments and research projects",
+        "schedule": "Tuesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 22,
+        "participants": ["noah@mergington.edu"]
     }
 }
 
@@ -53,6 +89,8 @@ def get_activities():
 
 
 @app.post("/activities/{activity_name}/signup")
+# Validate student is not already signed up
+
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
     # Validate activity exists
